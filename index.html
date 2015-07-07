@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/app.css">
+</head>
+<body ng-app="app">
+  <h1>MINESWEEPER</h1>
+  <div ng-controller="MineController" id="grid">
+    <div ng-repeat="row in board.grid track by $index">
+      <span ng-repeat="tile in row track by $index">
+        <button ng-class="{init: tile.init, display: tile.display, flagged: tile.flagged}" ng-click="flag(tile)" ng-dblclick="revealTile(tile)">{{tile.display}}</button>
+      </span>
+    </div>
+  </div>
+  <script type="text/javascript" src="/bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="/minesweeper.js"></script>
+</body>
+</html>
